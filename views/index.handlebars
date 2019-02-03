@@ -1,0 +1,18 @@
+<div class=container>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Web Scraping Project</h1>
+      <p class="lead">All the content belongs to http://www.rugbydata.com/</p>
+    </div>
+  </div>
+  <div class=row>
+    <button type="button" class="btn btn-danger" id="deleteData">Clear Data</button>
+  </div>
+  <div class=row>
+    <div class="article_block card-columns">
+      {{#each articles}}
+          {{> articles/article-block}}
+      {{/each}}
+    </div>
+  </div>  
+</div>
