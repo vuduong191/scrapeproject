@@ -1,10 +1,27 @@
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
   $("#deleteData").on("click",deleteData);
+  $(".scrape-new").on("click",scrapeData);
    // When you click the savenote button
   $(document).on("click", ".saveNote", addNote);
    // When you click the save  button without note
   $(document).on("click", "button.unsaved", saveWONote);  
+
+  function scrapeData(event){
+    event.preventDefault();
+    event.stopPropagation();
+    // Check current postID
+    $.ajax("/postID", {
+        type: "GET",
+      }).then(function(data) {
+        console.log(data)
+        if(data.newarticle){
+          location.reload()
+        } else {
+          alert("No more new article")
+        }
+    });    
+  }
   
   function deleteData(){
     event.preventDefault();
@@ -14,7 +31,7 @@ $(function() {
         type: "DELETE",
       }).then(function() {          
     });
-    location.reload();    
+    location.reload()
   }};
 
   function saveWONote() {

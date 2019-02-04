@@ -2,14 +2,14 @@
 <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap">
 {{#if saved}}
 <div class="flexbox">
-	<button class="card_button_full saved" data-id="{{_id}}">Saved -   <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+	<button class="card_button_full saved" data-id="{{_id}}">Saved -   <a data-toggle="collapse" href="#collapseExample{{_id}}" role="button" aria-expanded="false" aria-controls="collapseExample{{_id}}">
     View Note
   	</a> 
 	</button>
 </div>
-<div class="collapse" id="collapseExample">
+<div class="collapse" id="collapseExample{{_id}}">
 	<div class="card card-body">
-		{{#if note}} {{note}}
+		{{#if note}} {{note.body}}
 		{{else}} No note found.
 		{{/if}}
 	</div>
