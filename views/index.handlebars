@@ -1,13 +1,33 @@
-<div class=container>
+<div class="container">  
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Rugby News Scraper</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
   <div class="jumbotron jumbotron-fluid">
-    <div class="container">
+    <div class="overlay">
+    </div>
+    <div class="background-image">
+    </div>    
+    <div class="caption">
       <h1 class="display-4">Web Scraping Project</h1>
       <p class="lead">All the content belongs to http://www.rugbydata.com/</p>
+      <button class="btn btn-danger clear" id="deleteData">CLEAR ARTICLES!</button>
+      <button class="btn btn-danger scrape-new">SCRAPE NEW ARTICLES!</button>      
     </div>
-  </div>
-  <div class=row>
-    <button type="button" class="btn btn-danger" id="deleteData">Clear Data</button>
-  </div>
+  </div>  
   <div class=row>
     <div class="article_block card-columns">
       {{#each articles}}

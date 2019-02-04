@@ -1,5 +1,33 @@
 <div class="card article-container">
 <img class="card-img-top" src="{{imageUrl}}" alt="Card image cap">
+{{#if saved}}
+<div class="flexbox">
+	<button class="card_button_full saved" data-id="{{_id}}">Saved -   <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    View Note
+  	</a> 
+	</button>
+</div>
+<div class="collapse" id="collapseExample">
+	<div class="card card-body">
+		{{#if note}} {{note}}
+		{{else}} No note found.
+		{{/if}}
+	</div>
+</div>	
+{{else}}
+<div class="flexbox">
+	<button class="card_button unsaved" data-id="{{_id}}">Save</button>
+	<button class="card_button unsavedwithnote" data-id="{{_id}}" data-toggle="collapse" href="#collapsedAddNote{{_id}}" role="button" aria-expanded="false" aria-controls="collapsedAddNote{{_id}}">Add note and Save</button>
+</div>
+<div class="collapse" id="collapsedAddNote{{_id}}">
+	<div class="card card-body">
+		<form class="addNoteForm">
+  			<textarea id="textarea{{_id}}" name="noteBody" rows="4">Type note here.</textarea>
+			<button class="saveNote" data-id="{{_id}}">Submit </button>
+		</form>
+	</div>
+</div>	
+{{/if}}
 <div class="card-body">
 	<h5 class="card-title">{{title}}</h5>
 	<p class="card-text">{{openingText}} <a href="{{link}}">More</a></p>
