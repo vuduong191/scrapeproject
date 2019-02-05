@@ -111,7 +111,7 @@ button.unsavedwithnote{
 }
 .jumbotron .background-image {
   height: 100%;
-  background-image: url("https://cdn.newsapi.com.au/image/v1/e8d2a944197a904979fd7625bc15eb90");
+  background-image: url("../images/jumbo.jpg");
   background-size: cover;
   background-position-y: -200px
 }

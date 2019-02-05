@@ -9,9 +9,10 @@
 </div>
 <div class="collapse" id="collapseExample{{_id}}">
 	<div class="card card-body">
-		{{#if note}} {{note.body}}
-		{{else}} No note found.
-		{{/if}}
+		<form class="addNoteForm">
+  			<textarea id="textarea{{_id}}" name="noteBody" rows="4">{{#if note}}{{note.body}}{{else}}No note found.{{/if}}</textarea>
+			<button class="saveNote" data-id="{{_id}}">Add New Note </button>
+		</form>
 	</div>
 </div>	
 {{else}}
